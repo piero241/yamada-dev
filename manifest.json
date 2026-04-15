@@ -1,10 +1,11 @@
 {
   "name": "yamada.dev",
   "short_name": "yamada",
-  "description": "Votre hub digital : sites web, bots WhatsApp & Discord.",
+  "description": "Votre hub digital : sites web, bots WhatsApp & Discord, automatisation.",
   "start_url": "/yamada-dev/",
   "scope": "/yamada-dev/",
   "display": "standalone",
+  "orientation": "portrait",
   "theme_color": "#0b0e14",
   "background_color": "#0b0e14",
   "icons": [
