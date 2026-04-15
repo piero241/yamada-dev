@@ -1,6 +1,11 @@
-const CACHE_NAME = 'yamada-v2';
-self.addEventListener('install', e => {
-  e.waitUntil(caches.open(CACHE_NAME).then(cache => cache.addAll(['/yamada-dev/', '/yamada-dev/index.html'])).then(() => self.skipWaiting()));
+self.addEventListener('install', () => {
+  self.skipWaiting();
 });
-self.addEventListener('activate', e => e.waitUntil(self.clients.claim()));
-self.addEventListener('fetch', e => e.respondWith(caches.match(e.request).then(r => r || fetch(e.request))));
+
+self.addEventListener('activate', () => {
+  self.clients.claim();
+});
+
+self.addEventListener('fetch', (event) => {
+  event.respondWith(fetch(event.request));
+});
